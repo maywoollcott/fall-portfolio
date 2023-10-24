@@ -13,17 +13,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +24,107 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.homePage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.projectsPage {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.introContainer {
+  padding-left: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.specialtiesContainer {
+  padding-left: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: fit-content;
+  margin-top: 12%;
+}
+
+.specialtiesHeaderText {
+  font-size: 16px;
+  color: var(--mediumGray);
+  font-weight: 800;
+}
+
+.specialtiesTextContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.specialtiesText {
+  font-size: 16px;
+  color: var(--darkGray);
+  font-weight: 800;
+  margin: 0px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  border-bottom: solid;
+  border-bottom-color: var(--lightGray);
+  width: 250px;
+  text-align: left;
+}
+
+.bulletText {
+  font-size: 20px;
+  color: var(--darkGray);
+  font-weight: 800;
+  margin: 0px;
+  border-bottom: solid;
+  border-bottom-color: var(--lightGray);
+  text-align: right;
+  padding-top: 6px;
+}
+
+.graySquare {
+  width: 50%;
+  background-color: var(--mediumGray);
+  height: 160%;
+  position: absolute;
+  top: 0px;
+  z-index: -1;
+  right: 0px;
+}
+
+.pinkCircle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-color: var(--pink);
+  position: absolute;
+  z-index: -2;
+  left: 42%;
+  top: 17%;
+}
+
+.introText {
+  font-size: 120px;
+  font-weight: 800;
+  margin: 0px;
+  color: var(--darkGray);
+}
+
+.labelText {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 0px;
+  color: var(--darkGray);
 }
