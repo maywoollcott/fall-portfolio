@@ -153,7 +153,7 @@
 }
 
 .introContainer {
-  padding-left: 80px;
+  padding-left: 60px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -161,7 +161,7 @@
 }
 
 .specialtiesContainer {
-  padding-left: 80px;
+  padding-left: 60px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -171,7 +171,7 @@
 }
 
 .specialtiesHeaderText {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--mediumGray);
   font-weight: 800;
 }
@@ -182,7 +182,7 @@
 }
 
 .specialtiesText {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--darkGray);
   font-weight: 800;
   margin: 0px;
@@ -227,14 +227,14 @@
 }
 
 .introText {
-  font-size: 120px;
+  font-size: 100px;
   font-weight: 800;
   margin: 0px;
   color: var(--darkGray);
 }
 
 .labelText {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 800;
   margin: 0px;
   color: var(--darkGray);
@@ -311,7 +311,7 @@
 }
 
 .projectTitleActive {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   margin: 0px;
   color: var(--darkGray);
@@ -325,14 +325,120 @@
   color: var(--darkGray);
 }
 
+.activeProjectsHeader {
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 8%;
+  color: var(--darkGray);
+  margin-left: 5px;
+}
+
 .activeProjectContainer {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   width: 100%;
 }
 
 .verticalButtonContainer {
   display: flex;
   flex-direction: column;
+}
+
+.descriptionHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border-bottom: solid 2px var(--lightGray);
+  padding-bottom: 10px;
+}
+
+.descriptionName {
+  font-weight: 700;
+  text-align: left;
+  font-size: 28px;
+  margin: 0;
+}
+
+.descriptionWebsite {
+  font-weight: 700;
+  font-size: 10px;
+  color: var(--mediumGray);
+  text-align: right;
+  width: 100%;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.descriptionWebsite:hover {
+  color: var(--pink);
+}
+
+.descriptionText {
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--darkGray);
+  text-align: left;
+  margin: 0;
+  padding-top: 10px;
+  text-transform: uppercase;
+}
+
+.stackText {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--mediumGray);
+  text-align: left;
+  margin: 0;
+  padding-top: 10px;
+  text-transform: uppercase;
+  border-bottom: solid 2px var(--lightGray);
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.stackContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.stackListText {
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--darkGray);
+  text-align: left;
+  margin: 0;
+  padding-top: 10px;
+  text-transform: uppercase;
+  border-bottom: solid 2px var(--lightGray);
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.videoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phoneGif {
+  height: 400px;
+  border-radius: 10px;
+}
+
+.computerGif {
+  background-image: './librisLanding.png';
+  width: 400px;
 }
