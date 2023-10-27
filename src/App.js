@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 
 import { useInView } from 'react-intersection-observer';
-import anime from 'animejs/lib/anime.es.js';
 
 const colorCodes = {
   mediumGray: '#919598',
@@ -27,6 +26,7 @@ function App() {
   const [activeStack, setActiveStack] = useState([]);
   const [activeWebsite, setActiveWebsite] = useState();
   const [activeGif, setActiveGif] = useState();
+  const [imageLoading, setImageLoading] = useState(false);
 
   const handleScroll = () => {
     setOffsetY(window.pageYOffset);
@@ -51,6 +51,7 @@ function App() {
         setBountifullClasses('projectButtonActive');
       }, 400);
     } else {
+      setImageLoading(true);
       setActiveProject(name);
       setDiviiClasses('projectButtonActive');
       setPodplayClasses('projectButtonActive');
@@ -71,19 +72,13 @@ function App() {
       setLexiClasses('projectButton slide-in-blurred-left-3');
       setLibrisLogClasses('projectButton slide-in-blurred-left-2');
       setBountifullClasses('projectButton slide-in-blurred-left-1');
-      // anime({
-      //   targets: '.projectsHeader',
-      //   translateX: 250,
-      //   duration: 1200,
-      //   delay: 500,
-      // });
     }
   }, [inView]);
 
   useEffect(() => {
     if (activeProject === 'divii') {
       setActiveDescription(
-        'A fullstack tarot card app built for IOS and Android'
+        'Divii is a fullstack tarot card app built for IOS and Android.'
       );
       setActiveStack([
         'Typescript',
@@ -93,20 +88,21 @@ function App() {
         'Node.js',
         'AWS',
       ]);
-      setActiveWebsite('www.diviitarot.com');
+      setActiveWebsite('https://github.com/maywoollcott/divii');
       setActiveGif('./diviiGif.gif');
     }
     if (activeProject === 'podplay') {
       setActiveDescription(
-        'A web-based podcast interface with visual, unskippable ads, seeking, and custom skins'
+        'Podplay is a web-based podcast interface with visuals, unskippable ads, seeking, and custom skins.'
       );
-      setActiveStack(['React', 'CSS', 'NETLIFY']);
-      setActiveWebsite('github.com/podplayer');
+      setActiveStack(['React', 'CSS', 'GITHUB PAGES']);
+      setActiveWebsite('https://github.com/maywoollcott/podplay');
+      setActiveGif('./podplayGif.gif');
     }
 
     if (activeProject === 'juju') {
       setActiveDescription(
-        'A fullstack mobile app designed to send anonymous compliments and positivity. initial compliment sent via SMS from server with app invite'
+        'Juju is a fullstack mobile app designed to send anonymous compliments and positivity. The initial compliment is sent via SMS from server and contains an app invite.'
       );
       setActiveStack([
         'Typescript',
@@ -115,27 +111,37 @@ function App() {
         'Mongo DB',
         'Twilio',
       ]);
-      setActiveWebsite('github.com/juju');
+      setActiveWebsite('https://github.com/maywoollcott/jujuclient');
       setActiveGif('./jujuGif.gif');
     }
 
     if (activeProject === 'librisLog') {
       setActiveDescription(
-        'A virtual library where you can track, log, and anylyze your reading habits'
+        'LibrisLog is a virtual library where users can track, log, and anylyze their reading habits.'
       );
       setActiveStack(['React', 'CSS', 'Mongo DB', 'Node.js']);
-      setActiveWebsite('github.com/librislog');
+      setActiveWebsite('https://github.com/maywoollcott/librislog');
       setActiveGif('./librisGif.gif');
     }
 
     if (activeProject === 'lexi') {
       setActiveDescription(
-        'The vocabulary app for grownups: Build your lexiCon'
+        'The vocabulary app for grownups: build your lexicon.'
       );
       setActiveStack(['Typescript', 'React Native', 'CSS', 'Mongo DB']);
-      setActiveWebsite('github.com/lexi');
+      setActiveWebsite('https://github.com/maywoollcott/lexi-server');
       setActiveGif('./lexiGif.gif');
     }
+
+    if (activeProject === 'bountifull') {
+      setActiveDescription(
+        'Bountifull is fullstack mobile app that tracks your health - not your calories.'
+      );
+      setActiveStack(['React Native', 'CSS', 'Mongo DB']);
+      setActiveWebsite('https://tinyurl.com/yc6ydbvw');
+      setActiveGif('./bountifullGif.gif');
+    }
+    setImageLoading(false);
   }, [activeProject]);
 
   useEffect(() => {
@@ -187,6 +193,7 @@ function App() {
           }}
         ></div>
       </div>
+      <div className='break'></div>
       <div className='projectsPage'>
         {activeProject === null && (
           <>
@@ -367,34 +374,55 @@ function App() {
                 width: '20%',
               }}
             >
-              <div className='descriptionHeaderContainer'>
-                <p className='descriptionName'>{activeProject}</p>
-                <a
-                  className='descriptionWebsite'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  href={activeWebsite}
-                >
-                  {activeWebsite}
-                </a>
-              </div>
-              <p className='descriptionText'>{activeDescription}</p>
-              <div className='stackContainer'>
-                <p className='stackText'>STACK</p>
-                {activeStack.map((stack) => {
-                  return <p className='stackListText'>{stack}</p>;
-                })}
-              </div>
+              {!imageLoading && (
+                <div>
+                  <div className='descriptionHeaderContainer'>
+                    <p className='descriptionName'>{activeProject}</p>
+                    <a
+                      className='descriptionWebsite'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      href={activeWebsite}
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                  <p className='descriptionText'>
+                    {activeDescription}{' '}
+                    {activeProject === 'podplay' ? (
+                      <a
+                        className='descriptionWebsitePink'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        href={'https://maywoollcott.github.io/podplay'}
+                      >
+                        Check it out here!
+                      </a>
+                    ) : (
+                      ''
+                    )}
+                  </p>
+                  <div className='stackContainer'>
+                    <p className='stackText'>STACK</p>
+                    {activeStack.map((stack) => {
+                      return <p className='stackListText'>{stack}</p>;
+                    })}
+                  </div>
+                </div>
+              )}
             </div>
+
             <div className='videoContainer'>
-              <img
-                className={
-                  activeProject === 'librisLog' || activeProject === 'podplay'
-                    ? 'computerGif easeload'
-                    : 'phoneGif easeload'
-                }
-                src={activeGif}
-              ></img>
+              {!imageLoading && (
+                <img
+                  className={
+                    activeProject === 'librisLog' || activeProject === 'podplay'
+                      ? 'computerGif'
+                      : 'phoneGif'
+                  }
+                  src={activeGif}
+                ></img>
+              )}
             </div>
           </div>
         )}
