@@ -26,6 +26,31 @@
   }
 }
 
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes slide-in-blurred-left {
   0% {
     -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
@@ -92,6 +117,54 @@
   }
 }
 
+@-webkit-keyframes color-change-2x {
+  0% {
+    background: white;
+  }
+  100% {
+    background: var(--pink);
+  }
+}
+@keyframes color-change-2x {
+  0% {
+    background: white;
+  }
+  100% {
+    background: var(--pink);
+  }
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  -webkit-animation: slide-in-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    backwards;
+  animation: slide-in-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
+}
+
 .scale-out-center {
   -webkit-animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
     both;
@@ -136,6 +209,11 @@
     backwards;
 }
 
+.color-change-2x {
+  -webkit-animation: color-change-2x 2s linear alternate both;
+  animation: color-change-2x 2s linear alternate both;
+}
+
 .homePage {
   height: 100vh;
   display: flex;
@@ -144,7 +222,7 @@
 }
 
 .break {
-  height: 10vh;
+  height: 25vh;
 }
 
 .projectsPage {
@@ -466,4 +544,15 @@ a {
   width: 400px;
   height: auto;
   border-radius: 5px;
+}
+
+.aboutPage {
+  height: 100vh;
+  background-color: var(--pink);
+  border-top: solid 25px var(--mediumGray);
+}
+
+.aboutPageBefore {
+  height: 100vh;
+  background-color: white;
 }

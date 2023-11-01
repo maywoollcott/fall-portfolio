@@ -13,6 +13,7 @@ const colorCodes = {
 function App() {
   const [offsetY, setOffsetY] = useState(0);
   const [ref, inView] = useInView();
+  const [refAboutPage, inViewAboutPage] = useInView();
   const [activeProject, setActiveProject] = useState(null);
 
   const [diviiClasses, setDiviiClasses] = useState('projectButton');
@@ -21,6 +22,8 @@ function App() {
   const [lexiClasses, setLexiClasses] = useState('projectButton');
   const [librisLogClasses, setLibrisLogClasses] = useState('projectButton');
   const [bountifullClasses, setBountifullClasses] = useState('projectButton');
+
+  const [aboutClasses, setAboutClasses] = useState('aboutPageBefore');
 
   const [activeDescription, setActiveDescription] = useState();
   const [activeStack, setActiveStack] = useState([]);
@@ -76,6 +79,13 @@ function App() {
   }, [inView]);
 
   useEffect(() => {
+    if (inViewAboutPage) {
+      console.log('in view! about page');
+      setAboutClasses('aboutPage slide-in-right');
+    }
+  }, [inViewAboutPage]);
+
+  useEffect(() => {
     if (activeProject === 'divii') {
       setActiveDescription(
         'Divii is a fullstack tarot card app built for IOS and Android.'
@@ -83,6 +93,7 @@ function App() {
       setActiveStack([
         'Typescript',
         'React Native',
+        'Expo',
         'CSS',
         'Mongo DB',
         'Node.js',
@@ -107,6 +118,7 @@ function App() {
       setActiveStack([
         'Typescript',
         'React Native',
+        'Expo',
         'CSS',
         'Mongo DB',
         'Twilio',
@@ -128,7 +140,7 @@ function App() {
       setActiveDescription(
         'The vocabulary app for grownups: build your lexicon.'
       );
-      setActiveStack(['Typescript', 'React Native', 'CSS', 'Mongo DB']);
+      setActiveStack(['Typescript', 'React Native', 'Expo', 'CSS', 'Mongo DB']);
       setActiveWebsite('https://github.com/maywoollcott/lexi-server');
       setActiveGif('./lexiGif.gif');
     }
@@ -137,7 +149,7 @@ function App() {
       setActiveDescription(
         'Bountifull is fullstack mobile app that tracks your health - not your calories.'
       );
-      setActiveStack(['React Native', 'CSS', 'Mongo DB']);
+      setActiveStack(['React Native', 'Expo', 'CSS', 'Mongo DB']);
       setActiveWebsite('https://tinyurl.com/yc6ydbvw');
       setActiveGif('./bountifullGif.gif');
     }
@@ -421,11 +433,16 @@ function App() {
                       : 'phoneGif'
                   }
                   src={activeGif}
+                  alt={''}
                 ></img>
               )}
             </div>
           </div>
         )}
+      </div>
+      <div className='break'></div>
+      <div ref={refAboutPage} className={aboutClasses}>
+        <p>experience</p>
       </div>
     </div>
   );
