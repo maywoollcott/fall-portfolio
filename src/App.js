@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 
 import { useInView } from 'react-intersection-observer';
+import { AiFillGithub } from 'react-icons/ai';
+import { BsLinkedin } from 'react-icons/bs';
+import { MdEmail } from 'react-icons/md';
+import { FaSheetPlastic } from 'react-icons/fa6';
 
 const colorCodes = {
   mediumGray: '#919598',
@@ -442,7 +446,58 @@ function App() {
       </div>
       <div className='break'></div>
       <div ref={refAboutPage} className={aboutClasses}>
-        <p>experience</p>
+        <img className='aboutImgContainer' src={'./meFall.png'} alt={''}></img>
+        <div className='bioContainer'>
+          <p className='aboutHeader'>about</p>
+          <p className='bioText'>
+            My name is May Woollcott, and I'm a fullstack software engineer
+            currently based in Washington, DC. I'm passionate about creating
+            beautiful, engaging user experiences. Over the last three years,
+            I've worked for some pretty cool companies, including Acast and
+            Better. Check out my resume{' '}
+            <span>
+              <a
+                href='./MayWoollcottResumePdf.pdf'
+                download
+                className='bioTextLink'
+              >
+                here
+              </a>
+            </span>
+            {''} or below. When I'm not coding, you can find me playing around
+            with 3D animation in Blender and Unreal, working my way through The
+            Food Lab (Kenji Alt Lopez's masterpiece of a cookbook), or hunting
+            for a new podcast to binge. I have two cats, Arthur and Wendy, and a
+            Golden Retriever puppy, Perry. They tolerate each other. We're
+            working on it.
+          </p>
+          <div className='iconContainer'>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href={'https://github.com/maywoollcott'}
+            >
+              <AiFillGithub className='iconLink' />
+            </a>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href={'https://www.linkedin.com/in/maycollinswoollcott/'}
+            >
+              <BsLinkedin className='iconLink' size={34} />{' '}
+            </a>
+            <a
+              href='mailto:maywoollcott@gmail.com'
+              target='_blank'
+              rel='noreferrer noopener'
+            >
+              <MdEmail className='iconLink' size={40} />
+            </a>
+            <a href='./MayWoollcottResumePdf.pdf' download>
+              <FaSheetPlastic className='iconLink' size={33} />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

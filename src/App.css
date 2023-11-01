@@ -550,9 +550,87 @@ a {
   height: 100vh;
   background-color: var(--pink);
   border-top: solid 25px var(--mediumGray);
+  display: flex;
+  flex-direction: row;
 }
 
 .aboutPageBefore {
   height: 100vh;
   background-color: white;
+}
+
+.aboutImgContainer {
+  border: solid 25px var(--darkGray);
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.aboutImgContainer:hover {
+  border: solid 25px var(--darkGray);
+  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
+}
+
+.aboutHeader {
+  font-size: 120px;
+  font-weight: 800;
+  margin: 0px;
+  color: var(--darkGray);
+}
+
+.bioContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 10%;
+}
+
+.bioText {
+  font-size: 14px;
+  font-weight: 700;
+  width: 70%;
+  text-align: left;
+  line-height: 18px;
+  color: var(--darkGray);
+}
+
+.bioTextLink {
+  font-size: 14px;
+  font-weight: 700;
+  width: 70%;
+  text-align: left;
+  line-height: 18px;
+  color: var(--darkGray);
+  text-decoration: underline;
+}
+
+.bioTextLink:hover {
+  font-size: 14px;
+  font-weight: 700;
+  width: 70%;
+  text-align: left;
+  line-height: 18px;
+  color: var(--lightGray);
+  text-decoration: underline;
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.iconLink {
+  font-size: 40px;
+  color: var(--darkGray);
+  margin-right: 10px;
+}
+
+.iconLink:hover {
+  font-size: 40px;
+  cursor: pointer;
+  transform: scale(1.2);
 }
