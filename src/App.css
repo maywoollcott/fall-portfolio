@@ -295,6 +295,8 @@
   top: 0px;
   z-index: -1;
   right: 0px;
+  border-left: solid 25px var(--darkGray);
+  box-sizing: border-box;
 }
 
 .pinkCircle {
@@ -309,7 +311,7 @@
 }
 
 .introText {
-  font-size: 100px;
+  font-size: 7vw;
   font-weight: 800;
   margin: 0px;
   color: var(--darkGray);
@@ -524,6 +526,14 @@ a {
   width: 100%;
 }
 
+.descriptionWidthContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 20%;
+}
+
 .active {
   text-decoration: underline;
 }
@@ -634,4 +644,310 @@ a {
   font-size: 40px;
   cursor: pointer;
   transform: scale(1.2);
+}
+
+.projectButtonContainerActive {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  align-items: flex-start;
+}
+
+@media (max-width: 500px) {
+  .introText {
+    font-size: 15vw;
+    font-weight: 800;
+    margin: 0px;
+    color: var(--darkGray);
+  }
+
+  .introContainer {
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pink);
+    padding: 10px;
+  }
+
+  .specialtiesContainer {
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: fit-content;
+    margin-top: 12%;
+  }
+
+  .specialtiesHeaderText {
+    font-size: 16px;
+    color: var(--mediumGray);
+    font-weight: 800;
+  }
+
+  .specialtiesText {
+    font-size: 16px;
+    color: var(--darkGray);
+    font-weight: 800;
+    margin: 0px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border-bottom: solid;
+    border-bottom-color: var(--lightGray);
+    width: 250px;
+    text-align: left;
+  }
+
+  .graySquare {
+    width: 50%;
+    background-color: var(--mediumGray);
+    height: 160%;
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    right: 0px;
+    border: none;
+    visibility: hidden;
+  }
+
+  .pinkCircle {
+    width: 120%;
+    height: 35vw;
+    border-radius: 50%;
+    background-color: var(--pink);
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .labelText {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0px;
+    color: var(--darkGray);
+    padding: 5px;
+  }
+
+  .projectsHeader {
+    font-size: 15vw;
+    font-weight: 800;
+    margin: 0px;
+    color: var(--darkGray);
+  }
+
+  .projectLabel {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0px;
+    margin-top: 10px;
+    color: var(--darkGray);
+    width: 50%;
+  }
+
+  .activeProjectContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  .projectButtonActive {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 5px;
+  }
+
+  .projectButtonContainerActive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .verticalButtonContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .descriptionHeaderContainer {
+    height: 0;
+    visibility: hidden;
+  }
+
+  .descriptionWebsite {
+    visibility: hidden;
+  }
+
+  .descriptionText {
+    visibility: collapse;
+    height: 0;
+  }
+
+  .stackText {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--mediumGray);
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
+    text-transform: uppercase;
+    border-bottom: solid 2px var(--lightGray);
+    padding-bottom: 20px;
+    width: 100%;
+  }
+
+  .stackContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .stackListText {
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--darkGray);
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
+    text-transform: uppercase;
+    border-bottom: solid 2px var(--lightGray);
+    padding-bottom: 5px;
+    width: 100%;
+  }
+
+  .active {
+    text-decoration: underline;
+  }
+
+  .videoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .descriptionWidthContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .computerGif {
+    width: 90%;
+    height: auto;
+  }
+
+  .projectsPage {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .aboutPage {
+    background-color: var(--pink);
+    border-top: solid 25px var(--mediumGray);
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    height: fit-content;
+    padding-bottom: 50px;
+  }
+
+  .aboutPageBefore {
+    background-color: white;
+    visibility: hidden;
+  }
+
+  .aboutImgContainer {
+    border: solid 25px var(--darkGray);
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }
+
+  .aboutImgContainer:hover {
+    border: solid 25px var(--darkGray);
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+  }
+
+  .aboutHeader {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--darkGray);
+    padding-top: 50px;
+  }
+
+  .bioContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .bioText {
+    font-size: 10px;
+    font-weight: 700;
+    width: 70%;
+    text-align: center;
+    line-height: 18px;
+    color: var(--darkGray);
+  }
+
+  .bioTextLink {
+    font-size: 10px;
+    font-weight: 700;
+    width: 70%;
+    text-align: left;
+    line-height: 18px;
+    color: var(--darkGray);
+    text-decoration: underline;
+  }
+
+  .bioTextLink:hover {
+    font-size: 14px;
+    font-weight: 700;
+    width: 70%;
+    text-align: left;
+    line-height: 18px;
+    color: var(--lightGray);
+    text-decoration: underline;
+  }
+
+  .iconContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .iconLink {
+    font-size: 40px;
+    color: var(--darkGray);
+    margin-right: 10px;
+  }
+
+  .iconLink:hover {
+    font-size: 40px;
+    cursor: pointer;
+    transform: scale(1.2);
+  }
 }

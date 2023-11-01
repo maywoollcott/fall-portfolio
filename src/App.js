@@ -19,6 +19,7 @@ function App() {
   const [ref, inView] = useInView();
   const [refAboutPage, inViewAboutPage] = useInView();
   const [activeProject, setActiveProject] = useState(null);
+  const [screenWidth, setScreenWidth] = useState();
 
   const [diviiClasses, setDiviiClasses] = useState('projectButton');
   const [podplayClasses, setPodplayClasses] = useState('projectButton');
@@ -86,6 +87,7 @@ function App() {
     if (inViewAboutPage) {
       console.log('in view! about page');
       setAboutClasses('aboutPage slide-in-right');
+      console.log(window.innerWidth);
     }
   }, [inViewAboutPage]);
 
@@ -161,6 +163,8 @@ function App() {
   }, [activeProject]);
 
   useEffect(() => {
+    console.log(window.innerWidth);
+    setScreenWidth(window.innerWidth);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -168,7 +172,10 @@ function App() {
   return (
     <div className='App'>
       <div className='homePage'>
-        <div className='introContainer'>
+        <div
+          className='introContainer'
+          style={{ transform: `translateX(-${offsetY * 2}px)` }}
+        >
           <p className='introText'>hi, i'm may!</p>
           <p className='labelText'>SOFTWARE ENGINEER</p>
         </div>
@@ -176,13 +183,13 @@ function App() {
           className='specialtiesContainer'
           style={{ transform: `translateX(-${offsetY * 2}px)` }}
         >
-          <p className='specialtiesHeaderText'>SPECIALTIES:</p>
+          <p className='specialtiesHeaderText'>EXPERIENCED IN:</p>
           <div className='specialtiesTextContainer'>
-            <p className='specialtiesText'>FRONT-END</p>
+            <p className='specialtiesText'>FRONTEND</p>
             <p className='bulletText'>•</p>
           </div>
           <div className='specialtiesTextContainer'>
-            <p className='specialtiesText'>BACK-END</p>
+            <p className='specialtiesText'>BACKEND</p>
             <p className='bulletText'>•</p>
           </div>
           <div className='specialtiesTextContainer'>
@@ -194,20 +201,24 @@ function App() {
             <p className='bulletText'>•</p>
           </div>
         </div>
-        <div
-          className='graySquare'
-          style={{ transform: `translateX(${offsetY * 2}px)` }}
-        ></div>
-        <div
-          className='pinkCircle'
-          style={{
-            transform: `translateY(${offsetY * 1.2}px) translateX(-${
-              offsetY * 1.4
-            }px)`,
-            top: window.innerHeight / 2 - 110,
-            left: window.innerWidth / 2 - 110,
-          }}
-        ></div>
+        {screenWidth > 500 ? (
+          <>
+            <div
+              className='graySquare'
+              style={{ transform: `translateX(${offsetY * 2}px)` }}
+            ></div>
+            <div
+              className='pinkCircle'
+              style={{
+                transform: `translateY(${offsetY * 1.2}px) translateX(-${
+                  offsetY * 1.4
+                }px)`,
+                top: window.innerHeight / 2 - 110,
+                left: window.innerWidth / 2 - 110,
+              }}
+            ></div>
+          </>
+        ) : null}
       </div>
       <div className='break'></div>
       <div className='projectsPage'>
@@ -270,14 +281,7 @@ function App() {
         )}
         {activeProject !== null && (
           <div className='activeProjectContainer'>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                marginLeft: '30px',
-                alignItems: 'flex-start',
-              }}
-            >
+            <div className='projectButtonContainerActive'>
               <p className='activeProjectsHeader'>PROJECTS</p>
               <div
                 style={{
@@ -381,15 +385,7 @@ function App() {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'flex-start',
-                flexDirection: 'column',
-                width: '20%',
-              }}
-            >
+            <div className='descriptionWidthContainer'>
               {!imageLoading && (
                 <div>
                   <div className='descriptionHeaderContainer'>
