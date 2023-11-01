@@ -464,10 +464,11 @@ function App() {
                 here
               </a>
             </span>
-            {''} or below. When I'm not coding, you can find me playing around
-            with 3D animation in Blender and Unreal, working my way through The
-            Food Lab (Kenji Alt Lopez's masterpiece of a cookbook), or hunting
-            for a new podcast to binge. I have two cats, Arthur and Wendy, and a
+            {''} or below. <br></br>
+            <br></br>When I'm not coding, you can find me playing around with 3D
+            animation in Blender and Unreal, working my way through The Food Lab
+            (J. Kenji Lopez-Alt's masterpiece of a cookbook), or hunting for a
+            new podcast to binge. I have two cats, Arthur and Wendy, and a
             Golden Retriever puppy, Perry. They tolerate each other. We're
             working on it.
           </p>
